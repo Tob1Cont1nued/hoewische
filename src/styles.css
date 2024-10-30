@@ -13,8 +13,23 @@
     padding: 0 20px; /* Padding für die Toolbar-Inhalte */
     margin: 0 20px; /* Abstand zur Scrollbar */
     color: white !important; /* Schriftfarbe auf Weiß setzen */
+    transition: transform 0.3s ease-in-out; /* Sanfte Übergänge */
 }
 
+/* Styling für das Logo */
+.logo {
+    height: 70px; /* Höhe des Logos anpassen */
+    position: fixed; /* Fixiere das Logo an einer bestimmten Position */
+    top: 20px; /* Abstand vom oberen Rand */
+    right: 20px; /* Abstand vom rechten Rand */
+    z-index: 1000; /* Sicherstellen, dass das Logo über anderen Inhalten liegt */
+    margin: 0; /* Kein zusätzlicher Margin */
+    padding: 0; /* Kein zusätzlicher Padding */
+    z-index: 1000; /* Sicherstellen, dass das Logo über anderen Inhalten liegt */
+}
+.navbar.ng-hide {
+    transform: translateY(-100%); /* Navbar nach oben schieben beim Ausblenden */
+  }
 /* Content padding to avoid overlapping with navbar */
 .content {
     padding-top: 100px; /* Genügend Platz für die Toolbar, damit der Inhalt nicht verdeckt wird */

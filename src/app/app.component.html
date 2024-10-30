@@ -1,8 +1,11 @@
-<mat-toolbar class="navbar">
+<mat-toolbar class="navbar" *ngIf="isNavbarVisible">
   <button mat-button (click)="scrollTo('home')" style="color: white;">Home</button>
   <button mat-button (click)="scrollTo('about')"style="color: white;">About</button>
   <button mat-button (click)="scrollTo('contact')"style="color: white;">Contact</button>
 </mat-toolbar>
+
+<!-- Logo hinzugefügt -->
+<img src="assets/logo.png" alt="Logo" class="logo">
 
 <div class="content">
   <section id="home">
