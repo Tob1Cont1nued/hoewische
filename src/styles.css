@@ -20,7 +20,7 @@
 .logo {
     height: 70px; /* Höhe des Logos anpassen */
     position: fixed; /* Fixiere das Logo an einer bestimmten Position */
-    top: 20px; /* Abstand vom oberen Rand */
+    top: 15px; /* Abstand vom oberen Rand */
     right: 20px; /* Abstand vom rechten Rand */
     z-index: 1000; /* Sicherstellen, dass das Logo über anderen Inhalten liegt */
     margin: 0; /* Kein zusätzlicher Margin */
@@ -51,4 +51,29 @@ section {
 
 #contact {
     background-color: #cbd5e0;
+}
+
+/* Verhindert das Scrollen auf dem gesamten Body */
+body {
+    overflow: hidden; /* Verhindert das Scrollen auf der gesamten Seite */
+    margin: 0; /* Entfernt den Standardmargin */
+    padding: 0; /* Entfernt den Standardpadding */
+}
+
+/* Content-Bereich */
+.content {
+    overflow: auto; /* Ermöglicht das Scrollen innerhalb des Inhalts */
+    height: 100vh; /* Höhe des Inhalts */
+    padding-right: 15px; /* Platz für die Scrollleiste, falls erforderlich */
+    padding-left: 15px;
+}
+
+/* Versteckt die Scrollbar für Webkit-Browser */
+.content::-webkit-scrollbar {
+    display: none; /* Versteckt die Scrollbar */
+}
+
+/* Versteckt die Scrollbar für Firefox */
+.content {
+    scrollbar-width: none; /* Versteckt die Scrollbar */
 }
