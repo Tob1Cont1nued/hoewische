@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+/* Styling for the navbar */
+.navbar {
+    border-radius: 10px; /* Abgerundete Ecken */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Schlagschatten */
+    width: 80%; /* Feste Breite der Toolbar */
+    max-width: 800px; /* Maximalbreite für größere Bildschirme */
+    position: fixed; /* Position fixieren, um "schwebend" zu sein */
+    top: 20px; /* Abstand von der Oberseite */
+    left: 50%; /* Setze den linken Rand auf 50% */
+    transform: translateX(-50%); /* Verschiebe die Toolbar um die Hälfte ihrer Breite nach links */
+    z-index: 1000; /* Sicherstellen, dass die Toolbar über dem Inhalt liegt */
+    background-color: rgba(0, 113, 185, 0.9) !important; /* Halbtransparentes Gelb */
+    padding: 0 20px; /* Padding für die Toolbar-Inhalte */
+    margin: 0 20px; /* Abstand zur Scrollbar */
+    color: white !important; /* Schriftfarbe auf Weiß setzen */
+}
+
+/* Content padding to avoid overlapping with navbar */
+.content {
+    padding-top: 100px; /* Genügend Platz für die Toolbar, damit der Inhalt nicht verdeckt wird */
+}
+
+/* Section styling */
+section {
+    padding: 50px;
+    height: 100vh;
+}
+
+#home {
+    background-color: rgba(222, 223, 55, 0.9)
+}
+
+#about {
+    background-color: #e2e8f0;
+}
+
+#contact {
+    background-color: #cbd5e0;
+}
