@@ -3,7 +3,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     width: 80%;
-    max-width: 800px;
+    max-width: 1118px;
     position: fixed;
     top: 20px;
     left: 50%;
@@ -29,11 +29,14 @@
 .content {
     overflow: auto;
     height: calc(100vh - 100px); /* Höhe des Inhalts anpassen */
+    width: 90%;
+    max-width: 1200px; /* Gleiche maximale Breite wie der Footer */
+    margin: 0 auto; /* Zentriert den Inhalt */
     padding: 15px;
     padding-top: 100px;
     box-sizing: border-box;
     padding-bottom: 0px; /* Platz für den Footer */
-    
+    box-sizing: border-box;    
 }
 
 /* Section styling */
@@ -44,7 +47,8 @@ section {
 }
 
 #home {
-    background-color: rgba(222, 223, 55, 0.9);
+    /*background-color: rgba(222, 223, 55, 0.9);*/
+    background-color: #cbd5e0;
 }
 
 #about {
@@ -61,6 +65,8 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    /*background-color: rgba(222, 223, 55, 0.9);*/
+    background-color: #cbd5e0;
 }
 
 /* Versteckt die Scrollbar für Webkit-Browser */
