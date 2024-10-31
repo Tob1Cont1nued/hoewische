@@ -1,48 +1,50 @@
 /* Styling for the navbar */
 .navbar {
-    border-radius: 10px; /* Abgerundete Ecken */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Schlagschatten */
-    width: 80%; /* Feste Breite der Toolbar */
-    max-width: 800px; /* Maximalbreite für größere Bildschirme */
-    position: fixed; /* Position fixieren, um "schwebend" zu sein */
-    top: 20px; /* Abstand von der Oberseite */
-    left: 50%; /* Setze den linken Rand auf 50% */
-    transform: translateX(-50%); /* Verschiebe die Toolbar um die Hälfte ihrer Breite nach links */
-    z-index: 1000; /* Sicherstellen, dass die Toolbar über dem Inhalt liegt */
-    background-color: rgba(0, 113, 185, 0.9) !important; /* Halbtransparentes Gelb */
-    padding: 0 20px; /* Padding für die Toolbar-Inhalte */
-    margin: 0 20px; /* Abstand zur Scrollbar */
-    color: white !important; /* Schriftfarbe auf Weiß setzen */
-    transition: transform 0.3s ease-in-out; /* Sanfte Übergänge */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 800px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background-color: rgba(0, 113, 185, 0.9) !important;
+    padding: 0 20px;
+    margin: 0 20px;
+    color: white !important;
+    transition: transform 0.3s ease-in-out;
 }
 
 /* Styling für das Logo */
 .logo {
-    height: 70px; /* Höhe des Logos anpassen */
-    position: fixed; /* Fixiere das Logo an einer bestimmten Position */
-    top: 15px; /* Abstand vom oberen Rand */
-    right: 20px; /* Abstand vom rechten Rand */
-    z-index: 1000; /* Sicherstellen, dass das Logo über anderen Inhalten liegt */
-    margin: 0; /* Kein zusätzlicher Margin */
-    padding: 0; /* Kein zusätzlicher Padding */
-    z-index: 1000; /* Sicherstellen, dass das Logo über anderen Inhalten liegt */
+    height: 70px;
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 1000;
 }
-.navbar.ng-hide {
-    transform: translateY(-100%); /* Navbar nach oben schieben beim Ausblenden */
-  }
+
 /* Content padding to avoid overlapping with navbar */
 .content {
-    padding-top: 100px; /* Genügend Platz für die Toolbar, damit der Inhalt nicht verdeckt wird */
+    overflow: auto;
+    height: calc(100vh - 100px); /* Höhe des Inhalts anpassen */
+    padding: 15px;
+    padding-top: 100px;
+    box-sizing: border-box;
+    padding-bottom: 0px; /* Platz für den Footer */
+    
 }
 
 /* Section styling */
 section {
     padding: 50px;
     height: 100vh;
+    margin: 0; /* Zusätzlicher Abstand sicherstellen */
 }
 
 #home {
-    background-color: rgba(222, 223, 55, 0.9)
+    background-color: rgba(222, 223, 55, 0.9);
 }
 
 #about {
@@ -53,27 +55,101 @@ section {
     background-color: #cbd5e0;
 }
 
-/* Verhindert das Scrollen auf dem gesamten Body */
-body {
-    overflow: hidden; /* Verhindert das Scrollen auf der gesamten Seite */
-    margin: 0; /* Entfernt den Standardmargin */
-    padding: 0; /* Entfernt den Standardpadding */
-}
-
-/* Content-Bereich */
-.content {
-    overflow: auto; /* Ermöglicht das Scrollen innerhalb des Inhalts */
-    height: 100vh; /* Höhe des Inhalts */
-    padding-right: 15px; /* Platz für die Scrollleiste, falls erforderlich */
-    padding-left: 15px;
+/* Entfernt das Scrollen und weiße Streifen */
+html, body {
+    overflow: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 /* Versteckt die Scrollbar für Webkit-Browser */
 .content::-webkit-scrollbar {
-    display: none; /* Versteckt die Scrollbar */
+    display: none;
 }
 
-/* Versteckt die Scrollbar für Firefox */
-.content {
-    scrollbar-width: none; /* Versteckt die Scrollbar */
+/* Footer styling */
+.footer {
+    width: 100%;
+    background-color: rgba(0, 113, 185) !important;
+    color: white;
+    text-align: center;
+    padding: 20px 0; /* Anpassung für Höhe des Footers */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
 }
+
+/* Footer styling */
+.footer {
+    width: 100%;
+    background-color: rgba(0, 113, 185, 0.9);
+    color: white;
+    padding: 20px 20px;
+    text-align: left;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 0px 20px;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+  }
+  
+  .footer-section p,
+  .footer-section a {
+    font-size: 0.9em;
+    line-height: 1;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer-section a:hover {
+    text-decoration: underline;
+  }
+  
+  .quick-links ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .quick-links ul li {
+    margin: 5px 0;
+  }
+  
+  .quick-links ul li a {
+    color: white;
+  }
+  
+  .social-icons a {
+    margin-right: 10px;
+  }
+  
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+    }
+    .footer-section {
+      margin: 20px 0;
+    }
+  }
