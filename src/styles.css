@@ -27,28 +27,30 @@
 
 /* Content padding to avoid overlapping with navbar */
 .content {
-    overflow: auto;
-    height: calc(100vh - 100px); /* Höhe des Inhalts anpassen */
-    width: 90%;
+    overflow-y: auto;
+    height: auto; /* Höhe des Inhalts anpassen */
+    width: 100%;
     max-width: 1200px; /* Gleiche maximale Breite wie der Footer */
     margin: 0 auto; /* Zentriert den Inhalt */
-    padding: 15px;
     padding-top: 100px;
     box-sizing: border-box;
-    padding-bottom: 0px; /* Platz für den Footer */
-    box-sizing: border-box;    
+    padding-bottom: 150px; /* Platz für den Footer */
+    box-sizing: border-box;  
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    background-color: #e2e8f0;
 }
 
 /* Section styling */
 section {
-    padding: 50px;
-    height: 100vh;
+    padding-top: 100px;
+    padding-left: 50px;
+    height: 50vh;
     margin: 0; /* Zusätzlicher Abstand sicherstellen */
 }
 
 #home {
     /*background-color: rgba(222, 223, 55, 0.9);*/
-    background-color: #cbd5e0;
+    background-color: #e2e8f0;
 }
 
 #about {
@@ -56,17 +58,16 @@ section {
 }
 
 #contact {
-    background-color: #cbd5e0;
+    background-color: #e2e8f0;
 }
 
 /* Entfernt das Scrollen und weiße Streifen */
 html, body {
-    overflow: hidden;
     height: 100%;
     margin: 0;
     padding: 0;
-    /*background-color: rgba(222, 223, 55, 0.9);*/
     background-color: #cbd5e0;
+    
 }
 
 /* Versteckt die Scrollbar für Webkit-Browser */
@@ -74,26 +75,24 @@ html, body {
     display: none;
 }
 
-/* Footer styling */
-.footer {
-    width: 100%;
-    background-color: rgba(0, 113, 185) !important;
-    color: white;
-    text-align: center;
-    padding: 20px 0; /* Anpassung für Höhe des Footers */
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
+
 /* Footer styling */
-.footer {
-    width: 100%;
-    background-color: rgba(0, 113, 185, 0.9);
-    color: white;
-    padding: 20px 20px;
-    text-align: left;
+.footer { 
+  background-color: rgba(0, 113, 185) !important;
+  color: white;
+  text-align: left;
+  padding: 20px 20px; /* Anpassung für Höhe des Footers */
+  position: static;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
   }
   
   .footer-content {

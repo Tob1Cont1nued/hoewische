@@ -1,39 +1,72 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  // Die Methode scrollTo wird verwendet, um zum gewünschten Abschnitt zu scrollen
   scrollTo(section: string) {
+    // Diese Methode scrollt zu einem bestimmten Abschnitt auf der Seite
     document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
   }
 
-  isNavbarVisible = true; // Initial sichtbar
+  isNavbarVisible = true; // Navbar initial sichtbar
   lastScrollTop = 0; // Letzte Scroll-Position
   minWidth = 450;
   minHeight = 950;
-  
+
+  // Variable für die aktuelle Fenstergröße
+  currentWidth: number = 0;
+  currentHeight: number = 0;
+
+  // Variable für die Sichtbarkeit des Logos
+  logoVisible: boolean = true;
+
+  ngOnInit() {
+    // Initialisiere die Fenstergröße nur im Browser
+    if (typeof window !== 'undefined') {
+      this.currentWidth = window.innerWidth;
+      this.currentHeight = window.innerHeight;
+      // Überprüfe, ob das Logo sichtbar sein soll
+      this.updateLogoVisibility();
+    }
+  }
+
+  // @HostListener für das 'resize'-Ereignis des Fensters
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    if (typeof window !== 'undefined') {
+      // Fenstergröße bei Resize aktualisieren
+      this.currentWidth = window.innerWidth;
+      this.currentHeight = window.innerHeight;
+      // Überprüfe erneut, ob das Logo sichtbar sein soll
+      this.updateLogoVisibility();
+    }
+  }
+
+  // Methode zur Überprüfung, ob das Logo sichtbar sein soll
+  updateLogoVisibility() {
+    if (this.currentWidth < 1490) {
+      this.logoVisible = false; // Logo ausblenden, wenn das Fenster kleiner als 1490px ist
+    } else {
+      this.logoVisible = true; // Logo anzeigen, wenn das Fenster größer als 1490px ist
+    }
+  }
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    // Überprüfe die aktuelle Bildschirmgröße
-    const currentWidth = window.innerWidth;
-    const currentHeight = window.innerHeight;
-
-    // Wenn die Bildschirmgröße kleiner ist als die festgelegten Werte, gehe mit der Logik fort
-    if (currentWidth < this.minWidth && currentHeight < this.minHeight) {
+    // Überprüfen, ob wir die Größe des Fensters korrekt haben
+    if (this.currentWidth < this.minWidth && this.currentHeight < this.minHeight) {
       const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-      // Überprüfe die Scrollrichtung
       if (currentScrollTop > this.lastScrollTop) {
-        // Wenn nach unten gescrollt wird
-        this.isNavbarVisible = false; // Navbar ausblenden
+        // Scrollt nach unten
+        this.isNavbarVisible = false;
       } else {
-        // Wenn nach oben gescrollt wird
-        this.isNavbarVisible = true; // Navbar einblenden
+        // Scrollt nach oben
+        this.isNavbarVisible = true;
       }
 
       // Aktualisiere die letzte Scroll-Position
