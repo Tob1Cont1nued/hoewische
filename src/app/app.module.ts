@@ -11,13 +11,16 @@ import { ContactComponent } from './sections/contact/contact.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { ReferencesComponent } from './sections/references/references.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    ReferencesComponent,
   ],
   imports: [
     BrowserModule,
