@@ -228,6 +228,18 @@ html, body {
   color: rgba(0, 113, 185);
 }
 
+@media (max-width: 400px) {
+  .content,
+  #about,
+  #home,
+  section {
+      width: 100%; /* Nutzt die gesamte Breite des Bildschirms */
+      max-width: 100%; /* Maximale Breite auch auf 100% gesetzt */
+      padding-left: 10px; /* Optional: etwas Innenabstand links und rechts */
+      padding-right: 10px;
+      background-color: #cbd5e0;
+  }
+}
   /* Responsive Design */
   @media (max-width: 768px) {
     .footer-content {
