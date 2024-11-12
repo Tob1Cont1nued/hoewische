@@ -46,10 +46,12 @@
     box-sizing: border-box;  
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
     background-color: #e2e8f0;
+   
+;
 }
 
 #about {
-  width: 80%; /* Gleiche Breite wie die Navbar */
+  width: 100%; /* Gleiche Breite wie die Navbar */
   max-width: 1118px; /* Gleiche maximale Breite wie die Navbar */
   margin: 0 auto; /* Zentriert die Sektion */
   padding-top: 100px;
@@ -61,7 +63,6 @@
   max-width: 100%; 
   height: auto; 
   margin: 20px auto; 
-  
   border-radius: 8px; 
 }
 
@@ -74,13 +75,15 @@
 
 /* Section styling */
 section {
-  width: 80%; /* Anpassung an Navbar-Breite */
+  width: 100%; /* Anpassung an Navbar-Breite */
   max-width: 1118px; /* Gleiche maximale Breite wie die Navbar */
   margin: 0 auto; /* Zentriert die Sektionen */
   padding-top: 100px;
   padding-left: 50px;
+  padding-right: 50px;
   height: auto; /* Dynamische Höhe */
-  background-color: #e2e8f0;
+  background-color: transparent;
+  text-align: justify;
 }
 
 #home {
@@ -187,10 +190,11 @@ html, body {
   .swiper-container {
     width: 100%;
     max-width: 1200px; /* maximale Breite für den gesamten Swiper-Container */
-    margin: 40px auto;
+    margin: 0px auto;
     padding-bottom: 60px;
+    padding-top: 10px;
     position: relative;
-    overflow: hidden; /* verhindert, dass Elemente über den Container hinausragen */
+    overflow: hidden;
 }
 
 .swiper-wrapper {
@@ -201,13 +205,15 @@ html, body {
 
 /* Styling der Referenzkarte */
 .reference-card {
-    background-color: #fff;
+    background-color: #ddde3a;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     max-width: 300px;
     text-align: center;
+    display: block;
     transition: transform 0.3s ease;
+    
 }
 
 /* Positionierung der Navigationspfeile */
@@ -256,6 +262,7 @@ html, body {
     .reference-card {
       width: 90%;
   }
+  
     .footer-section {
       margin: 20px 0;
     }

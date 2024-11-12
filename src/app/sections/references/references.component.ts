@@ -7,7 +7,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-Swiper.use([Navigation]);
+Swiper.use([Navigation, Pagination]);
 
 @Component({
   selector: 'app-references',
@@ -34,7 +34,7 @@ export class ReferencesComponent implements AfterViewInit {
         },
         pagination: {
           el: '.swiper-pagination',
-          clickable: true,
+          dynamicBullets: true,
         },
         breakpoints: {
           768: {
@@ -47,6 +47,7 @@ export class ReferencesComponent implements AfterViewInit {
           }
         }
       });
+      
     }
   }
 }
