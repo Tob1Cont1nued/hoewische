@@ -185,19 +185,22 @@ html, body {
   }
 
   .swiper-container {
-    width: 90%;
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1200px; /* maximale Breite für den gesamten Swiper-Container */
     margin: 40px auto;
-    padding-bottom: 40px;
-  }
-  
-  .swiper-slide {
+    padding-bottom: 60px;
+    position: relative;
+    overflow: hidden; /* verhindert, dass Elemente über den Container hinausragen */
+}
+
+.swiper-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .reference-card {
+}
+
+/* Styling der Referenzkarte */
+.reference-card {
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -205,20 +208,45 @@ html, body {
     max-width: 300px;
     text-align: center;
     transition: transform 0.3s ease;
-  }
-  
-  .swiper-button-next, .swiper-button-prev {
+}
+
+/* Positionierung der Navigationspfeile */
+.swiper-button-next, .swiper-button-prev {
     color: #333;
     font-size: 24px;
     width: 44px;
     height: 44px;
-  }
-  
-  .swiper-button-next::after, .swiper-button-prev::after {
-    font-size: 24px;
+    position: absolute;
+    top: 50%; /* Zentriert die Pfeile vertikal */
+    transform: translateY(-50%);
+    z-index: 10;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-button-next {
+    right: 20px; /* Abstand zum Rand des Containers */
+}
+
+.swiper-button-prev {
+    left: 20px; /* Abstand zum Rand des Containers */
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+    font-size: 20px;
     color: #333;
-  }
-  
+}
+
+/* Paginator zentrieren und unter den Kacheln platzieren */
+.swiper-pagination {
+    position: absolute;
+    bottom: 0; /* Abstand zum Container-Boden */
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
   /* Responsive Design */
   @media (max-width: 768px) {
     .footer-content {
