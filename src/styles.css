@@ -186,73 +186,48 @@ html, body {
     width: 24px;
     height: 24px;
   }
-
-  .swiper-container {
+  .swiper {
     width: 100%;
-    max-width: 1200px; /* maximale Breite für den gesamten Swiper-Container */
-    margin: 0px auto;
-    padding-bottom: 60px;
-    padding-top: 10px;
-    position: relative;
-    overflow: hidden;
-}
+    height: 100%;
+  }
 
-.swiper-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Styling der Referenzkarte */
-.reference-card {
-    background-color: #ddde3a;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 300px;
+  .swiper-slide {
     text-align: center;
-    display: block;
-    transition: transform 0.3s ease;
-    
-}
-
-/* Positionierung der Navigationspfeile */
-.swiper-button-next, .swiper-button-prev {
-    color: #333;
-    font-size: 24px;
-    width: 44px;
-    height: 44px;
-    position: absolute;
-    top: 50%; /* Zentriert die Pfeile vertikal */
-    transform: translateY(-50%);
-    z-index: 10;
-    border-radius: 50%;
+    font-size: 18px;
+    background: #ddde3a;
     display: flex;
-    align-items: center;
     justify-content: center;
-}
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    border-radius: 8px; 
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swiper {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 .swiper-button-next {
-    right: 20px; /* Abstand zum Rand des Containers */
+  right: 20px; /* Abstand zum Rand des Containers */
 }
 
 .swiper-button-prev {
-    left: 20px; /* Abstand zum Rand des Containers */
+  left: 20px; /* Abstand zum Rand des Containers */
 }
 
 .swiper-button-next::after, .swiper-button-prev::after {
-    font-size: 20px;
-    color: #333;
+  font-size: 20px;
+  color: rgba(0, 113, 185);
 }
 
-/* Paginator zentrieren und unter den Kacheln platzieren */
-.swiper-pagination {
-    position: absolute;
-    bottom: 0; /* Abstand zum Container-Boden */
-    left: 0;
-    width: 100%;
-    text-align: center;
-}
   /* Responsive Design */
   @media (max-width: 768px) {
     .footer-content {
@@ -262,7 +237,6 @@ html, body {
     .reference-card {
       width: 90%;
   }
-  
     .footer-section {
       margin: 20px 0;
     }

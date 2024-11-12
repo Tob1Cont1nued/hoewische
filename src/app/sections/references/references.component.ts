@@ -23,31 +23,29 @@ export class ReferencesComponent implements AfterViewInit {
     // Prüfe, ob der Code im Browser läuft
     if (isPlatformBrowser(this.platformId)) {
       // Initialisiere Swiper nur, wenn wir im Browser sind
-      const swiper = new Swiper('.swiper-container', {
-        modules: [Navigation, Pagination],
+      var swiper = new Swiper(".mySwiper", {
         slidesPerView: 1,
         spaceBetween: 20,
         loop: true,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
         pagination: {
-          el: '.swiper-pagination',
-          dynamicBullets: true,
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
         breakpoints: {
           768: {
             slidesPerView: 2,
-            spaceBetween: 30
+            spaceBetween: 20
           },
           1024: {
             slidesPerView: 3,
-            spaceBetween: 40
+            spaceBetween: 20
           }
         }
       });
-      
     }
   }
 }
