@@ -1,9 +1,11 @@
 <mat-toolbar class="navbar">
   <ng-container *ngIf="currentWidth > 768; else mobileMenu">
     <!-- Desktop View -->
-    <button mat-button (click)="scrollTo('home')" style="color: white;">Home</button>
-    <button mat-button (click)="scrollTo('about')" style="color: white;">About</button>
-    <button mat-button (click)="scrollTo('contact')" style="color: white;">Contact</button>
+    <button mat-button (click)="scrollTo('home')" style="color: white;">Home |</button>
+    <button mat-button (click)="scrollTo('about')" style="color: white;">About |</button>
+    <button mat-button (click)="scrollTo('contact')" style="color: white;">Contact |</button>
+    <button mat-button (click)="scrollTo('datenschutz')" style="color: white;">Datenschutzerklärung |</button>
+    <button mat-button (click)="scrollTo('impressum')" style="color: white;">Impressum</button>
   </ng-container>
 
   <ng-template #mobileMenu>
@@ -15,6 +17,8 @@
       <button mat-menu-item (click)="scrollTo('home')">Home</button>
       <button mat-menu-item (click)="scrollTo('about')">About</button>
       <button mat-menu-item (click)="scrollTo('contact')">Contact</button>
+      <button mat-menu-item (click)="scrollTo('datenschutz')">Datenschutzerklärung</button>
+      <button mat-menu-item (click)="scrollTo('impressum')">Impressum</button>
     </mat-menu>
   </ng-template>
 </mat-toolbar>
@@ -34,6 +38,14 @@
 
   <section id="references">
     <app-references></app-references>
+  </section>
+
+  <section id="datenschutz">
+    <app-datenschutz></app-datenschutz>
+  </section>
+
+  <section id="impressum">
+    <app-impressum></app-impressum>
   </section>
 </div>
 
