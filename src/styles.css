@@ -252,4 +252,17 @@ html, body {
     .footer-section {
       margin: 20px 0;
     }
+    .navbar {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    mat-toolbar .mat-button {
+      display: none; /* Versteckt Buttons im mobilen Menü */
+    }
+  
+    mat-icon {
+      color: white;
+      font-size: 24px;
+    }
   }

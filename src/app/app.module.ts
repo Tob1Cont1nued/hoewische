@@ -12,6 +12,8 @@ import { ContactComponent } from './sections/contact/contact.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { ReferencesComponent } from './sections/references/references.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { ReferencesComponent } from './sections/references/references.component'
     BrowserAnimationsModule, // Notwendig für Material Animationen
     MatToolbarModule,
     MatButtonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [], // Standardmäßig keine experimentellen Provider
   bootstrap: [AppComponent]

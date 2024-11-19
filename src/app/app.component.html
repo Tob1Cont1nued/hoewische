@@ -1,8 +1,24 @@
-<mat-toolbar class="navbar" *ngIf="isNavbarVisible">
-  <button mat-button (click)="scrollTo('home')" style="color: white;">Home</button>
-  <button mat-button (click)="scrollTo('about')"style="color: white;">About</button>
-  <button mat-button (click)="scrollTo('contact')"style="color: white;">Contact</button>
+<mat-toolbar class="navbar">
+  <ng-container *ngIf="currentWidth > 768; else mobileMenu">
+    <!-- Desktop View -->
+    <button mat-button (click)="scrollTo('home')" style="color: white;">Home</button>
+    <button mat-button (click)="scrollTo('about')" style="color: white;">About</button>
+    <button mat-button (click)="scrollTo('contact')" style="color: white;">Contact</button>
+  </ng-container>
+
+  <ng-template #mobileMenu>
+    <!-- Mobile View -->
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="scrollTo('home')">Home</button>
+      <button mat-menu-item (click)="scrollTo('about')">About</button>
+      <button mat-menu-item (click)="scrollTo('contact')">Contact</button>
+    </mat-menu>
+  </ng-template>
 </mat-toolbar>
+
 
 <!-- Logo hinzugefügt -->
 <img  src="assets/logo.png" alt="Logo" class="logo" *ngIf="logoVisible">
