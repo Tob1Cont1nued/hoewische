@@ -2,8 +2,9 @@
   <ng-container *ngIf="currentWidth > 768; else mobileMenu">
     <!-- Desktop View -->
     <button mat-button (click)="scrollTo('home')" style="color: white;">Home |</button>
-    <button mat-button (click)="scrollTo('about')" style="color: white;">About |</button>
-    <button mat-button (click)="scrollTo('contact')" style="color: white;">Contact |</button>
+    <button mat-button (click)="scrollTo('about')" style="color: white;">Über mich |</button>
+    <button mat-button (click)="scrollTo('contact')" style="color: white;">Kontakt |</button>
+    <button mat-button (click)="scrollTo('references')" style="color: white;">Referenzen |</button>    
     <button mat-button (click)="scrollTo('datenschutz')" style="color: white;">Datenschutzerklärung |</button>
     <button mat-button (click)="scrollTo('impressum')" style="color: white;">Impressum</button>
   </ng-container>
@@ -15,8 +16,9 @@
     </button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="scrollTo('home')">Home</button>
-      <button mat-menu-item (click)="scrollTo('about')">About</button>
-      <button mat-menu-item (click)="scrollTo('contact')">Contact</button>
+      <button mat-menu-item (click)="scrollTo('about')">Über mich</button>
+      <button mat-menu-item (click)="scrollTo('contact')">Kontakt</button>
+      <button mat-menu-item (click)="scrollTo('references')">Referenzen</button>
       <button mat-menu-item (click)="scrollTo('datenschutz')">Datenschutzerklärung</button>
       <button mat-menu-item (click)="scrollTo('impressum')">Impressum</button>
     </mat-menu>
@@ -30,6 +32,10 @@
 <div class="content">
   <section id="home">
     <app-home></app-home>
+  </section>
+
+  <section id="contact">
+    <app-contact></app-contact>
   </section>
 
   <section id="about">
