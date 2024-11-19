@@ -1,14 +1,14 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
 
+export class AppComponent implements OnInit {
+  @ViewChild('menu') menu: any; // Zugriff auf das Menü für mobile Navigation
   scrollTo(section: string) {
-    // Diese Methode scrollt zu einem bestimmten Abschnitt auf der Seite
     document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
   }
 
@@ -17,60 +17,44 @@ export class AppComponent implements OnInit {
   minWidth = 450;
   minHeight = 950;
 
-  // Variable für die aktuelle Fenstergröße
-  currentWidth: number = 0;
+  currentWidth: number = 0; // Aktuelle Fensterbreite
   currentHeight: number = 0;
 
-  // Variable für die Sichtbarkeit des Logos
-  logoVisible: boolean = true;
+  logoVisible: boolean = true; // Logo-Sichtbarkeit
+  isMenuOpen = false; // Zustand des mobilen Menüs
 
   ngOnInit() {
-    // Initialisiere die Fenstergröße nur im Browser
     if (typeof window !== 'undefined') {
       this.currentWidth = window.innerWidth;
       this.currentHeight = window.innerHeight;
-      // Überprüfe, ob das Logo sichtbar sein soll
       this.updateLogoVisibility();
     }
   }
 
-  // @HostListener für das 'resize'-Ereignis des Fensters
   @HostListener('window:resize', ['$event'])
   onResize(event: Event): void {
     if (typeof window !== 'undefined') {
-      // Fenstergröße bei Resize aktualisieren
       this.currentWidth = window.innerWidth;
       this.currentHeight = window.innerHeight;
-      // Überprüfe erneut, ob das Logo sichtbar sein soll
       this.updateLogoVisibility();
     }
   }
 
-  // Methode zur Überprüfung, ob das Logo sichtbar sein soll
   updateLogoVisibility() {
-    if (this.currentWidth < 1490) {
-      this.logoVisible = false; // Logo ausblenden, wenn das Fenster kleiner als 1490px ist
-    } else {
-      this.logoVisible = true; // Logo anzeigen, wenn das Fenster größer als 1490px ist
-    }
+    this.logoVisible = this.currentWidth >= 1490;
   }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    // Überprüfen, ob wir die Größe des Fensters korrekt haben
     if (this.currentWidth < this.minWidth && this.currentHeight < this.minHeight) {
       const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-      if (currentScrollTop > this.lastScrollTop) {
-        // Scrollt nach unten
-        this.isNavbarVisible = false;
-      } else {
-        // Scrollt nach oben
-        this.isNavbarVisible = true;
-      }
-
-      // Aktualisiere die letzte Scroll-Position
-      this.lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Verhindert negative Scroll-Positionen
+      this.isNavbarVisible = currentScrollTop <= this.lastScrollTop;
+      this.lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
     }
+  }
+
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 }
