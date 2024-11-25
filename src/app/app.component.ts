@@ -5,26 +5,23 @@ import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-
 export class AppComponent implements OnInit {
-  @ViewChild('menu') menu: any; // Zugriff auf das Menü für mobile Navigation
-  scrollTo(section: string) {
-    document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
-  }
-
+  @ViewChild('menu') menu: any;
+  
+  isScrolled = false; // Zustand der Navigation: gescrollt oder nicht
   isNavbarVisible = true; // Navbar initial sichtbar
   lastScrollTop = 0; // Letzte Scroll-Position
   minWidth = 450;
   minHeight = 950;
 
   currentWidth: number = 0; // Aktuelle Fensterbreite
-  currentHeight: number = 0;
-
+  currentHeight: number = 0; // Aktuelle Fensterhöhe
   logoVisible: boolean = true; // Logo-Sichtbarkeit
   isMenuOpen = false; // Zustand des mobilen Menüs
 
   ngOnInit() {
     if (typeof window !== 'undefined') {
+      // Initiale Fenstergröße erfassen
       this.currentWidth = window.innerWidth;
       this.currentHeight = window.innerHeight;
       this.updateLogoVisibility();
@@ -34,6 +31,7 @@ export class AppComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event: Event): void {
     if (typeof window !== 'undefined') {
+      // Fenstergröße bei Änderung aktualisieren
       this.currentWidth = window.innerWidth;
       this.currentHeight = window.innerHeight;
       this.updateLogoVisibility();
@@ -41,20 +39,33 @@ export class AppComponent implements OnInit {
   }
 
   updateLogoVisibility() {
+    // Logo wird nur angezeigt, wenn Fensterbreite >= 1490px ist
     this.logoVisible = this.currentWidth >= 1490;
   }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    if (this.currentWidth < this.minWidth && this.currentHeight < this.minHeight) {
-      const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-      this.isNavbarVisible = currentScrollTop <= this.lastScrollTop;
-      this.lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+    if (typeof window !== 'undefined') {
+      // Scroll-Position abfragen
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      // Wenn gescrollt, Navigation anpassen (transparent zu weiß)
+      this.isScrolled = scrollTop > 50; // Grenzwert, ab dem die Navigation sich ändert
     }
   }
 
+  scrollTo(section: string) {
+    // Smooth-Scrolling zur Ziel-Sektion
+    document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+  }
+
   toggleMenu(): void {
+    // Mobile Navigation (Hamburger-Menü) ein-/ausblenden
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  bookAppointment(): void {
+    // Logik für Terminvereinbarung
+    // Z.B. Weiterleitung zu einer Terminseite
+    window.open('https://terminbuchung.deinservice.de', '_blank');
   }
 }

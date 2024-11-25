@@ -1,158 +1,301 @@
+body {
+  font-family: 'BrutalType', sans-serif;
+}
+@font-face {
+  font-family: 'BrutalType';
+  src: url('/assets/fonts/BrutalType-Regular.woff2') format('woff2'),
+       url('/assets/fonts/BrutalType-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 /* Styling for the navbar */
 .navbar {
-    border-radius: 0px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    width: 80%;
-    max-width: 1118px;
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    background-color: rgba(0, 113, 185, 0.9) !important;
-    padding: 0 20px;
-    margin: 0 20px;
-    color: white !important;
-    transition: transform 0.3s ease-in-out;
+  position: fixed;
+  top: 20px; /* Abstand vom oberen Rand */
+  left: 50%; /* Verschiebt die Navbar zur Mitte des Bildschirms */
+  transform: translateX(-50%); /* Zentriert die Navbar */
+  width: 70% !important;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white !important;
+  border-radius: 10px;
+  padding: 40px 0 !important; /* Vertikaler Innenabstand */
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
 }
 
-.underline {
-  width: 100%;  /* Die Breite der Linie entspricht der Breite des Textes */
-  max-width: 1118px; /* Gleiche maximale Breite wie der Textcontainer */
-  height: 1px; /* Höhe der Linie */
-  background-color: #000; /* Farbe der Linie, z.B. schwarz */
-  margin: 10px auto; /* Zentriert die Linie und fügt oben und unten Abstand hinzu */
+.navbar-scrolled {
+  background-color: white !important; /* Weißer Hintergrund, wenn gescrollt */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Schatten hinzufügen */
+  border-radius: 10px;
 }
 
-/* Styling für das Logo */
 .logo {
-    height: 70px;
-    position: fixed;
-    top: 15px;
-    right: 20px;
-    z-index: 1000;
+  height: 40px;
+  margin-right: 20px;
+}
+
+.logo-container {
+  position: absolute;
+  left: 20px; /* Abstand von der linken Seite */
+}
+
+/* Navigation links styling */
+.nav-links {
+  display: absolute;
+  justify-content:space-around;
+  width: 50%;
+  max-width: 1200px;
+  align-items: center;
+}
+
+.nav-links button {
+  display:inline;
+  background: none;
+  border: none;
+  color: black; /* Standardfarbe */
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-family: 'BrutalType', sans-serif;
+}
+
+.navbar-scrolled .nav-links button {
+  color: black; /* Farbe bei gescrolltem Zustand */
+}
+
+.nav-links button:hover {
+  color: rgba(0, 113, 185, 0.9); /* Hover-Farbe */
+}
+
+/* Mobile menu toggle (Hamburger) */
+.menu-toggle {
+  display: none; /* Standardmäßig nicht sichtbar */
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.navbar .menu-toggle {
+  color: black;
+}
+
+.navbar-scrolled .menu-toggle {
+  color: black;
+}
+
+button[mat-icon-button] {
+  position: absolute;
+  right: 20px; /* Abstand vom rechten Rand */
+  top: 50%; /* Zentriert vertikal */
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000; /* Über alles andere legen */
+}
+
+.appointment-button {
+  position: relative;
+  left: 150px; /* Abstand von der rechten Seite */
+  font-size: 14px; /* Schriftgröße */
+  font-weight: bold; /* Fettdruck */
+  color: rgba(0, 113, 185) !important;
+  background-color: rgba(222, 222, 58, 0.767) !important; /* Primäre Farbe */
+  border-radius: 5px; /* Runde Ecken */
+  padding: 8px 15px; /* Innenabstand */
+  /* Abstand zu den anderen Buttons */
+  cursor: pointer; /* Zeiger ändern */
+  transition: background-color 0.3s ease;
+}
+
+.appointment-button:hover {
+  background-color: rgb(222, 222, 58)!important;
+  color: rgba(0, 113, 185) !important;
+}
+
+/*Über mich*/
+.aboutme-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.aboutme-header img {
+  width: 100%; /* Breite des Containers einnehmen */
+  max-width: 100%; /* Sicherstellen, dass das Bild nicht überläuft */
+  height: auto; /* Proportionen beibehalten */
+  object-fit: cover; /* Inhalt an den Container anpassen */
+  border-radius: 10px; /* Runde Ecken für das Bild */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Optionaler Schatten fürs Bild */
+}
+.hidden {
+  display: none; /* Blendet den Inhalt aus */
+}
+.about-container {
+  max-width: 1200px; /* Maximale Breite des Containers */
+  margin: 20px auto; /* Zentrieren des Containers */
+  padding: 20px 25px; /* Innenabstand */
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Schlagschatten */
+  border-radius: 10px; /* Runde Ecken */
+  overflow: hidden; /* Inhalt auf die Containergröße begrenzen */
+}
+/* Styling für die Überschrift */
+.about-container h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: rgba(0, 113, 185, 0.9);
+}
+
+
+/*Styling Kontakt*/
+/* Container für die gesamte Kontakt-Sektion */
+.contact-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto; /* Zentriert den Container */
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Schlagschatten */
+  border-radius: 10px; /* Abgerundete Ecken */
+  padding: 20px 25px; /* Innenabstand */
+  text-align: center; /* Zentrierter Text */
+  font-family: 'BrutalType', sans-serif;
+  overflow: hidden; /* Verhindert Überlauf */
+}
+
+/* Styling für die Überschrift */
+.contact-container h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: rgba(0, 113, 185, 0.9);
+}
+
+/* Beschreibungstext */
+.contact-container p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Google Maps-Container */
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* Verhältnis für 16:9 */
+  overflow: hidden;
+  border-radius: 10px; /* Abgerundete Ecken */
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Google Maps iframe */
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none; /* Entfernt den Rahmen */
+  border-radius: 10px;
+}
+
+/* Button zum Starten der Navigation */
+.navigation-button {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(0, 113, 185, 0.9); /* Blau */
+  padding: 12px 20px; /* Innenabstand */
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navigation-button:hover {
+  background-color: rgba(0, 90, 150, 1); /* Dunkleres Blau bei Hover */
+  transform: scale(1.05); /* Vergrößert den Button leicht */
+}
+
+/* Styling für den Titel */
+.about-title {
+  text-align: center;
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+/* Styling für die Trennlinie */
+.underline {
+  width: 50px;
+  height: 5px;
+  background-color: rgba(0, 113, 185, 0.8);
+  margin: 10px auto 20px;
+  border-radius: 5px;
+}
+
+/* Bild-Styling */
+.about-image {
+  width: 100%; /* Bild ist immer 100% breit */
+  display: block;
+  border-radius: 10px 10px 0 0; /* Runde obere Ecken */
+  object-fit: cover; /* Bild an Container anpassen */
+}
+
+/* Inhalt */
+.about-content {
+  padding: 20px;
+}
+
+/* Schlagschatten und runde Ecken */
+.about-content h2 {
+  margin-top: 20px;
+  font-size: 1.8rem;
+}
+
+.about-content p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Button-Styling */
+.toggle-button {
+  background-color: rgba(0, 113, 185, 0.8);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: block;
+  margin: 0 auto;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.toggle-button:hover {
+  background-color: rgba(0, 113, 185, 1);
 }
 
 /* Content padding to avoid overlapping with navbar */
 .content {
-    overflow-y: auto;
-    height: auto; /* Höhe des Inhalts anpassen */
-    width: 80%;
-    max-width: 1118px; /* Gleiche maximale Breite wie der Footer */
-    margin: 0 auto; /* Zentriert den Inhalt */
-    padding-top: 100px;
-    box-sizing: border-box;
-    padding-bottom: 150px; /* Platz für den Footer */
-    box-sizing: border-box;  
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-    background-color: #e2e8f0;
-   
-;
-}
-
-#about {
-  width: 100%; /* Gleiche Breite wie die Navbar */
-  max-width: 1118px; /* Gleiche maximale Breite wie die Navbar */
-  margin: 0 auto; /* Zentriert die Sektion */
-  padding-top: 100px;
-  background-color: #e2e8f0;
+  overflow-y: auto;
+  height: auto; /* Höhe des Inhalts anpassen */
+  width: 80%;
+  max-width: 1300px; /* Gleiche maximale Breite wie die Navbar */
+  margin: 0 auto; /* Zentriert den Inhalt */
+  margin-top: 80px;
+  padding-top: 10px; /* Platz für Navbar */
+  padding-bottom: 150px; /* Platz für den Footer */
   box-sizing: border-box;
+  background-color: white;
 }
-.aboutme-header {
-  display: block;
-  max-width: 100%; 
-  height: auto; 
-  margin: 20px auto; 
-  border-radius: 8px; 
-}
-
-.aboutme-header img {
-  max-width: 100%; 
-  height: auto; 
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px; 
-}
-
-/* Section styling */
-section {
-  width: 100%; /* Anpassung an Navbar-Breite */
-  max-width: 1118px; /* Gleiche maximale Breite wie die Navbar */
-  margin: 0 auto; /* Zentriert die Sektionen */
-  padding-top: 100px;
-  padding-left: 50px;
-  padding-right: 50px;
-  height: auto; /* Dynamische Höhe */
-  background-color: transparent;
-  text-align: justify;
-}
-
-#home {
-    /*background-color: rgba(222, 223, 55, 0.9);*/
-    background-color: #e2e8f0;
-}
-
-#about {
-    background-color: #e2e8f0;
-}
-
-#contact {
-    background-color: #e2e8f0;
-}
-
-/* Entfernt das Scrollen und weiße Streifen */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #cbd5e0;
-    
-}
-
-/* Versteckt die Scrollbar für Webkit-Browser */
-.content::-webkit-scrollbar {
-    display: none;
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-.map-container {
-  text-align: center;
-  margin: 20px 0;
-}
-
-iframe {
-  border: 0;
-  width: 100%;
-  max-width: 600px;
-  height: 450px;
-  margin: 0 auto;
-  width: "600";
-  height: "450"; 
-  
-}
-
-.navigation-button {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: rgba(0, 113, 185, 0.9);
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.navigation-button:hover {
-  background-color: rgba(0, 114, 185, 0.466);
-}
-
 
 /* Footer styling */
-.footer { 
+.footer {
   background-color: rgba(0, 113, 185) !important;
   color: white;
   text-align: left;
@@ -162,138 +305,94 @@ iframe {
   left: 0;
   z-index: 1000;
   width: 100%;
-  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.2) !important; 
-  }
-  
-  .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 1100px;
-    margin: auto;
-  }
-  
-  .footer-section {
-    flex: 1;
-    min-width: 200px;
-    margin: 0px 20px;
-  }
-  
-  .footer-section h3 {
-    font-size: 1.2em;
-    margin-bottom: 15px;
-  }
-  
-  .footer-section p,
-  .footer-section a {
-    font-size: 0.9em;
-    line-height: 1;
-    color: white;
-    text-decoration: none;
-  }
-  
-  .footer-section a:hover {
-    text-decoration: underline;
-  }
-  
-  .quick-links ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .quick-links ul li {
-    margin: 5px 0;
-  }
-  
-  .quick-links ul li a {
-    color: white;
-  }
-  
-  .social-icons a {
-    margin-right: 10px;
-  }
-  
-  .social-icons img {
-    width: 24px;
-    height: 24px;
-  }
-  .swiper {
-    width: 100%;
-    height: 100%;
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 15px;
   }
 
-  .swiper-slide {
+  .contact-container h1 {
+    font-size: 24px;
+  }
+
+  .navigation-button {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+  .about-container {
+    width: 95%; /* Kleinere Breite auf schmalen Bildschirmen */
+  }
+
+  .about-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .toggle-button {
+    font-size: 0.9rem;
+  }
+  .nav-links {
+    display: none; /* Navigation wird mobil versteckt */
+    flex-direction: column; /* Navigation in eine Spalte */
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Schatten für Dropdown-Menü */
+  }
+
+  .nav-links.open {
+    display: flex; /* Navigation sichtbar, wenn geöffnet */
+  }
+
+  .menu-toggle {
+    display: block; /* Hamburger-Menü im mobilen Layout anzeigen */
+  }
+
+  .appointment-button {
+    width: 90%; /* Button nimmt fast die volle Breite ein */
     text-align: center;
-    font-size: 18px;
-    background: #ddde3a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-    border-radius: 8px; 
+    margin: 10px auto; /* Zentriert den Button in der Spalte */
   }
 
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .navbar {
+    flex-wrap: wrap; /* Erlaubt Zeilenumbruch */
+    width: 100%; /* Füllt die Breite aus */
+    padding: 10px; /* Reduzierte Höhe */
+    justify-content: space-between; /* Platz zwischen Logo und Burger-Menü */
+    height: auto;
   }
 
-  .swiper {
-    margin-left: auto;
-    margin-right: auto;
+  button[mat-icon-button] {
+    display: block; /* Burger-Menü sichtbar */
   }
 
-.swiper-button-next {
-  right: 20px; /* Abstand zum Rand des Containers */
-}
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
 
-.swiper-button-prev {
-  left: 20px; /* Abstand zum Rand des Containers */
-}
+  .footer-section {
+    margin: 20px 0;
+  }
 
-.swiper-button-next::after, .swiper-button-prev::after {
-  font-size: 20px;
-  color: rgba(0, 113, 185);
-}
-
-@media (max-width: 400px) {
+  button[mat-icon-button] {
+    display: block; /* Burger-Menü im mobilen Layout anzeigen */
+  }
+  .content {
+    margin-top: 80px; /* Abstand einfügen */
+  }
   .content,
   #about,
   #home,
   section {
-      width: 100%; /* Nutzt die gesamte Breite des Bildschirms */
-      max-width: 100%; /* Maximale Breite auch auf 100% gesetzt */
-      padding-left: 10px; /* Optional: etwas Innenabstand links und rechts */
-      padding-right: 10px;
-      background-color: #cbd5e0;
+    width: 100%; /* Nutzt die gesamte Breite */
+    max-width: 100%;
+    padding: 10px; /* Innenabstand */
+    background-color: #cbd5e0;
   }
 }
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .footer-content {
-      flex-direction: column;
-      text-align: center;
-    }
-    .reference-card {
-      width: 90%;
-  }
-    .footer-section {
-      margin: 20px 0;
-    }
-    .navbar {
-      width: 100%;
-      padding: 10px;
-    }
-  
-    mat-toolbar .mat-button {
-      display: none; /* Versteckt Buttons im mobilen Menü */
-    }
-  
-    mat-icon {
-      color: white;
-      font-size: 24px;
-    }
-  }

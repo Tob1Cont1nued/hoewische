@@ -1,71 +1,88 @@
-<mat-toolbar class="navbar">
+<!-- Navbar -->
+<mat-toolbar [ngClass]="{ 'navbar-transparent': !isScrolled, 'navbar-scrolled': isScrolled }" class="navbar">
+  <!-- Logo -->
+  <div class="logo-container">
+  <img src="assets/Logo_Titel.png" alt="Logo" class="logo" >
+  </div>
+  <!-- Desktop Navigation -->
   <ng-container *ngIf="currentWidth > 768; else mobileMenu">
-    <!-- Desktop View -->
-    <button mat-button (click)="scrollTo('home')" style="color: white;">Home |</button>
-    <button mat-button (click)="scrollTo('about')" style="color: white;">Über mich |</button>
-    <button mat-button (click)="scrollTo('contact')" style="color: white;">Kontakt |</button>
-    <button mat-button (click)="scrollTo('references')" style="color: white;">Referenzen |</button>    
-    <button mat-button (click)="scrollTo('datenschutz')" style="color: white;">Datenschutzerklärung |</button>
-    <button mat-button (click)="scrollTo('impressum')" style="color: white;">Impressum</button>
+    <div class="nav-links">
+      <button mat-button (click)="scrollTo('services')">Leistungen</button>
+      <button mat-button (click)="scrollTo('about')">Über mich</button>
+      <button mat-button (click)="scrollTo('contact')">Kontakt</button>
+      <button mat-button (click)="scrollTo('references')">Referenzen</button>
+      <button mat-button (click)="scrollTo('datenschutz')">Datenschutzerklärung</button>
+      <button mat-button (click)="scrollTo('impressum')">Impressum</button>
+    </div>
   </ng-container>
-
+  <div>
+  <button mat-raised-button color="primary" class="appointment-button" (click)="bookAppointment()">Jetzt Termin vereinbaren!</button>
+</div>
+  <!-- Mobile Navigation -->
   <ng-template #mobileMenu>
-    <!-- Mobile View -->
     <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="scrollTo('home')">Home</button>
+      <button mat-menu-item (click)="scrollTo('services')">Leistungen</button>
       <button mat-menu-item (click)="scrollTo('about')">Über mich</button>
       <button mat-menu-item (click)="scrollTo('contact')">Kontakt</button>
       <button mat-menu-item (click)="scrollTo('references')">Referenzen</button>
       <button mat-menu-item (click)="scrollTo('datenschutz')">Datenschutzerklärung</button>
       <button mat-menu-item (click)="scrollTo('impressum')">Impressum</button>
+      <button mat-menu-item color="primary" (click)="bookAppointment()">Jetzt Termin vereinbaren!</button>
     </mat-menu>
   </ng-template>
 </mat-toolbar>
 
-
-<!-- Logo hinzugefügt -->
-<img  src="assets/logo.png" alt="Logo" class="logo" *ngIf="logoVisible">
-
+<!-- Content -->
 <div class="content">
-  <section id="home">
-    <app-home></app-home>
+  <!-- Home Section -->
+  <section id="services">
+    <app-services></app-services>
   </section>
 
-  <section id="contact">
-    <app-contact></app-contact>
-  </section>
-
+  <!-- About Section -->
   <section id="about">
     <app-about></app-about>
   </section>
 
+  <!-- Contact Section -->
+  <section id="contact">
+    <app-contact></app-contact>
+  </section>
+
+  <!-- References Section -->
   <section id="references">
     <app-references></app-references>
   </section>
 
+  <!-- Privacy Policy Section -->
   <section id="datenschutz">
     <app-datenschutz></app-datenschutz>
   </section>
 
+  <!-- Impressum Section -->
   <section id="impressum">
     <app-impressum></app-impressum>
   </section>
 </div>
 
-<!-- Footer Section in HTML -->
+<!-- Footer -->
 <footer class="footer">
   <div class="footer-content">
+    <!-- Contact Info -->
     <div class="footer-section contact-info">
       <h3>Kontakt</h3>
       <p><strong>TÜV Rheinland FSP</strong></p>
-      <p>Antwerpener Str. 8<br> 48163 Münster</p>
-      <p>Telefon: <a href="tel:01722370228">0172 2370228</a><br>
-      E-Mail: <a href="mailto:[noch nicht vorhanden]">[noch nicht vorhanden]</a></p>
+      <p>Antwerpener Str. 8<br>48163 Münster</p>
+      <p>
+        Telefon: <a href="tel:01722370228">0172 2370228</a><br>
+        E-Mail: <a href="mailto:[noch nicht vorhanden]">[noch nicht vorhanden]</a>
+      </p>
     </div>
 
+    <!-- Bank Info -->
     <div class="footer-section bank-info">
       <h3>Bankverbindung</h3>
       <p><strong>Bankname:</strong> Musterbank</p>
@@ -73,16 +90,17 @@
       <p><strong>BIC:</strong> ABCDDEFFXXX</p>
     </div>
 
+    <!-- Legal Info -->
     <div class="footer-section legal-info">
       <h3>Rechtliches</h3>
       <p><a href="#datenschutz">Datenschutzerklärung</a></p>
       <p><a href="#impressum">Impressum</a></p>
     </div>
 
+    <!-- Social Media -->
     <div class="footer-section social-media">
       <h3>Folge uns</h3>
       <p>Links zu Social Media oder weiteren Informationen können hier eingefügt werden.</p>
-      <!-- Social Media Icons als Beispiel -->
       <div class="social-icons">
         <a href="#" aria-label="Whatsapp"><img src="/assets/whatsapp.webp" alt="Whatsapp"></a>
         <a href="#" aria-label="Youtube"><img src="/assets/youtube.webp" alt="Youtube"></a>

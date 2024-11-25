@@ -16,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { DatenschutzComponent } from './sections/datenschutz/datenschutz.component';
 import { ImpressumComponent } from './sections/impressum/impressum.component';
+import { ServicesComponent } from './sections/services/services.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { ImpressumComponent } from './sections/impressum/impressum.component';
     ReferencesComponent,
     DatenschutzComponent,
     ImpressumComponent,
+    ServicesComponent,
   ],
   imports: [
     BrowserModule,
