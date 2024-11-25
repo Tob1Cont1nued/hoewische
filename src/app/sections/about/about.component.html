@@ -1,10 +1,20 @@
 <div class="about-container">
-    <h1 class="about-title">Über mich</h1>
-    <div class="underline"></div>
-    <div class="aboutme-header">
-      <img src="/assets/profile1.jpg" alt="Profilbild" class="about-image">
+    <!-- Überschrift und Pfeil -->
+    <div class="about-header">
+      <h1 class="about-title">Über mich</h1>
+      <div class="toggle-arrow" (click)="toggleContent()">
+        <span [class]="isContentHidden ? 'arrow arrow-down' : 'arrow arrow-up'"></span>
+      </div>
     </div>
-    
+  
+    <div class="underline" *ngIf="!isContentHidden"></div>
+  
+    <!-- Bildcontainer -->
+    <div class="aboutme-header">
+      <img src="/assets/profile1.jpg" alt="Profilbild" class="about-image" *ngIf="!isContentHidden">
+    </div>
+  
+    <!-- Versteckbarer Inhalt -->
     <div class="about-content" *ngIf="!isContentHidden">
       <h2>Wer bin ich?</h2>
       <p>
@@ -36,9 +46,5 @@
         realisieren!
       </p>
     </div>
-  
-    <button class="toggle-button" (click)="toggleContent()">
-      {{ buttonLabel }}
-    </button>
   </div>
   

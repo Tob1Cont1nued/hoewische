@@ -114,32 +114,69 @@ button[mat-icon-button] {
   color: rgba(0, 113, 185) !important;
 }
 
-/*Über mich*/
-.aboutme-header {
+/* Container- und Header-Layout */
+.about-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto; /* Zentriert den Container */
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Schlagschatten */
+  border-radius: 10px; /* Abgerundete Ecken */
+  padding: 20px 25px; /* Innenabstand */
+  text-align: center; /* Zentrierter Text */
+  font-family: 'BrutalType', sans-serif;
+  overflow: hidden; /* Verhindert Überlauf */
+}
+
+.about-header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
 }
 
+/* Pfeil-Container */
+.toggle-arrow {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Pfeil-Design */
+.arrow {
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid black; /* Horizontale Linie */
+  border-right: 2px solid black; /* Vertikale Linie */
+  transform: rotate(-45deg); /* Standard (nach unten) */
+  transition: transform 0.3s ease; /* Sanfte Drehung */
+}
+
+.arrow-up {
+  transform: rotate(135deg); /* Zeigt nach oben */
+}
+
+.arrow-down {
+  transform: rotate(-45deg); /* Zeigt nach unten */
+}
+
+/* Bild-Design */
 .aboutme-header img {
-  width: 100%; /* Breite des Containers einnehmen */
-  max-width: 100%; /* Sicherstellen, dass das Bild nicht überläuft */
-  height: auto; /* Proportionen beibehalten */
-  object-fit: cover; /* Inhalt an den Container anpassen */
-  border-radius: 10px; /* Runde Ecken für das Bild */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Optionaler Schatten fürs Bild */
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
-.hidden {
-  display: none; /* Blendet den Inhalt aus */
+
+/* Versteckbarer Inhalt */
+.about-content {
+  margin-top: 20px;
 }
-.about-container {
-  max-width: 1200px; /* Maximale Breite des Containers */
-  margin: 20px auto; /* Zentrieren des Containers */
-  padding: 20px 25px; /* Innenabstand */
-  background-color: white;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Schlagschatten */
-  border-radius: 10px; /* Runde Ecken */
-  overflow: hidden; /* Inhalt auf die Containergröße begrenzen */
+
+.about-content.hidden {
+  display: none;
 }
 /* Styling für die Überschrift */
 .about-container h1 {
@@ -224,9 +261,12 @@ button[mat-icon-button] {
 
 /* Styling für den Titel */
 .about-title {
-  text-align: center;
-  margin: 0;
-  font-size: 2.5rem;
+  text-align: center; /* Zentriert den Text horizontal */
+  margin: 0 auto; /* Zentriert den gesamten Block */
+  font-size: 2.5rem; /* Schriftgröße */
+  font-weight: bold; /* Fett */
+  color: rgba(0, 113, 185, 0.9); /* Primärfarbe */
+  padding: 10px 0; /* Vertikaler Innenabstand */
 }
 
 /* Styling für die Trennlinie */
