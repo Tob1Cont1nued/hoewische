@@ -1,6 +1,37 @@
 body {
   font-family: 'BrutalType', sans-serif;
+  margin: 0; /* Verhindert Standard-Margins */
+  padding-right: 0; /* Platz für Scrollbar sicherstellen */
+  overflow-y: scroll; /* Immer Scrollbar anzeigen */
+  box-sizing: border-box; /* Einheitliches Box-Modell */
 }
+
+* {
+  box-sizing: border-box; /* Für alle Elemente einheitliches Modell */
+}
+
+.services-container, .content, .about-container, .contact-container {
+  padding-right: 16px; /* Platz für die Scrollbar */
+}
+
+.services-container, .about-container, .contact-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 95%; /* Verhindert, dass der Inhalt zu nah an den Bildschirmrand kommt */
+  overflow: hidden; /* Sicherstellen, dass kein Überlauf entsteht */
+}
+body::-webkit-scrollbar {
+  width: 8px; /* Scrollbar-Breite */
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 113, 185, 0.9); /* Primärfarbe */
+  border-radius: 5px; /* Runde Ecken */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 90, 150, 1); /* Dunkleres Blau bei Hover */
+}
+
 @font-face {
   font-family: 'BrutalType';
   src: url('/assets/fonts/BrutalType-Regular.woff2') format('woff2'),
@@ -517,9 +548,20 @@ button[mat-icon-button] {
     width: 100%; /* Nutzt die gesamte Breite */
     max-width: 100%;
     padding: 10px; /* Innenabstand */
-    background-color: #cbd5e0;
+    background-color: #ffffff;
   }
   .services-grid {
     grid-template-columns: 1fr; /* Nur eine Spalte */
+    justify-items: center; 
+  }
+  .service-box {
+    width: 100%; /* Reduziert die Breite der Container */
+  }
+  .services-container {
+    background-color: rgb(255, 255, 255);
+    max-width: 100%;
+  }
+  .services-container, .content, .about-container, .contact-container {
+    padding-right: 10px; /* Reduzierter Abstand für mobile Geräte */
   }
 }
