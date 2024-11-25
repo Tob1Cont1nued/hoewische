@@ -2,12 +2,14 @@
     <!-- Überschrift und Pfeil -->
     <div class="about-header">
       <h1 class="about-title">Über mich</h1>
+      
       <div class="toggle-arrow" (click)="toggleContent()">
         <span [class]="isContentHidden ? 'arrow arrow-down' : 'arrow arrow-up'"></span>
       </div>
+      
     </div>
-  
     <div class="underline" *ngIf="!isContentHidden"></div>
+   
   
     <!-- Bildcontainer -->
     <div class="aboutme-header">
