@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AboutComponent {
 
-  isContentHidden = false; // Zustand für die Sichtbarkeit des Inhalts
+  isContentHidden = true; // Zustand für die Sichtbarkeit des Inhalts
 
   toggleContent(): void {
     // Zustand umschalten

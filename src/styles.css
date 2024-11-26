@@ -45,7 +45,7 @@ body::-webkit-scrollbar-thumb:hover {
   top: 20px; /* Abstand vom oberen Rand */
   left: 50%; /* Verschiebt die Navbar zur Mitte des Bildschirms */
   transform: translateX(-50%); /* Zentriert die Navbar */
-  width: 70%;
+  width: 70% !important;
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -231,6 +231,15 @@ button[mat-icon-button] {
 
 /* Überschrift */
 .services-title {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: rgba(0, 113, 185, 0.9);
+  padding: 10px 0;
+}
+
+.data-title{
   text-align: center;
   margin: 0 auto;
   font-size: 2.5rem;
@@ -615,7 +624,7 @@ button[mat-icon-button] {
   }
 
   .navbar {
-    width: 100%; /* Füllt die Breite aus */
+    width: 100% !important; /* Füllt die Breite aus */
     padding: 10px; /* Reduzierte Höhe */
     justify-content: space-between; /* Platz zwischen Logo und Burger-Menü */
     height: auto;

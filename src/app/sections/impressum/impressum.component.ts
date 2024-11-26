@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './impressum.component.css'
 })
 export class ImpressumComponent {
+  isContentHidden = true; // Zustand für die Sichtbarkeit des Inhalts
 
+  toggleContent(): void {
+    // Zustand umschalten
+    this.isContentHidden = !this.isContentHidden;
+  }  
 }

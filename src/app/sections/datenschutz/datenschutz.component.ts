@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './datenschutz.component.css'
 })
 export class DatenschutzComponent {
+  isContentHidden = true; // Zustand für die Sichtbarkeit des Inhalts
+
+  toggleContent(): void {
+    // Zustand umschalten
+    this.isContentHidden = !this.isContentHidden;
+  }  
 
 }
