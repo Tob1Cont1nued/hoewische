@@ -448,6 +448,34 @@ button[mat-icon-button] {
   box-sizing: border-box;
   background-color: white;
 }
+/* Swiper */
+.swiper.mySwiper {
+  /* Deine Stile hier */
+  /* background-color: lightblue; */
+  width: 100%;
+    max-width: 1250px; /* maximale Breite für den gesamten Swiper-Container */
+    margin: 0px auto;
+    padding: 50px 50px 40px 50px;
+}
+.references-title {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: rgba(0, 113, 185, 0.9);
+  padding: 10px 0;
+}
+
+/* Styling der Referenzkarte */
+.swiper-slide {
+  background-color: #ddde3a;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  margin: 0 auto; /* Zentriert den Inhalt */
+  margin-top: 0px;
+  padding: 50px 30px 50px 30px;
+  justify-items: center;
+}
 
 /* Footer styling */
 .footer {
@@ -462,6 +490,58 @@ button[mat-icon-button] {
   width: 100%;
   box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.2) !important;
 }
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: auto;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 0px 20px;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+  }
+  
+  .footer-section p,
+  .footer-section a {
+    font-size: 0.9em;
+    line-height: 1;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer-section a:hover {
+    text-decoration: underline;
+  }
+  
+  .quick-links ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .quick-links ul li {
+    margin: 5px 0;
+  }
+  
+  .quick-links ul li a {
+    color: white;
+  }
+  
+  .social-icons a {
+    margin-right: 10px;
+  }
+  
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+  }
 
 /* Responsive Footer */
 @media (max-width: 768px) {

@@ -25,7 +25,7 @@ export class ReferencesComponent implements AfterViewInit {
       // Initialisiere Swiper nur, wenn wir im Browser sind
       var swiper = new Swiper(".mySwiper", {
         slidesPerView: 1,
-        spaceBetween: 20,
+        spaceBetween: 60,
         loop: true,
         pagination: {
           el: ".swiper-pagination",
@@ -37,12 +37,12 @@ export class ReferencesComponent implements AfterViewInit {
         },
         breakpoints: {
           768: {
-            slidesPerView: 2,
-            spaceBetween: 20
+            slidesPerView: 1,
+            spaceBetween: 60
           },
           1024: {
-            slidesPerView: 3,
-            spaceBetween: 20
+            slidesPerView: 1,
+            spaceBetween: 60
           }
         }
       });
