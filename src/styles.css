@@ -568,7 +568,7 @@ button[mat-icon-button] {
   }
   .about-container {
     width: 100%;
-    margin: 0; /* Zentrierung entfernen */
+    margin-bottom: 10px; /* Zentrierung entfernen */
     padding: 0 10px; /* Optional: Innenabstand für Ränder */
   }
 
