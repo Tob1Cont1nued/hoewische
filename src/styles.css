@@ -511,9 +511,27 @@ button[mat-icon-button] {
   }
 
   .appointment-button {
-    width: 90%; /* Button nimmt fast die volle Breite ein */
-    text-align: center;
-    margin: 10px auto; /* Zentriert den Button in der Spalte */
+    position: fixed; /* Fixiert den Button an einer festen Position */
+    bottom: 20px; /* Abstand vom unteren Rand */
+    right: 20px; /* Abstand vom rechten Rand */
+    width: 60px; /* Runde Form: Breite */
+    height: 60px; /* Runde Form: Höhe */
+    background-color: rgb(222, 222, 58); /* Button-Farbe */
+    color: rgb(36, 34, 34); /* Text-/Symbolfarbe */
+    border: none; /* Keine Umrandung */
+    border-radius: 50%; /* Runde Form */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Schlagschatten */
+    display: flex; /* Flexbox aktivieren */
+    justify-content: center; /* Zentriert Symbol horizontal */
+    align-items: center; /* Zentriert Symbol vertikal */
+    cursor: pointer; /* Klickindikator */
+    z-index: 1000; /* Über anderen Elementen */
+  }
+
+  .appointment-button:hover {
+    background-color: rgba(222, 200, 58, 0.9); /* Helle Hover-Farbe */
+    color: rgba(0, 113, 185); /* Hover-Farbe für Text */
+    transform: scale(1.1); /* Button wird beim Hover etwas größer */
   }
 
   .navbar {
