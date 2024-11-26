@@ -4,6 +4,7 @@ body {
   padding-right: 0; /* Platz für Scrollbar sicherstellen */
   overflow-y: scroll; /* Immer Scrollbar anzeigen */
   box-sizing: border-box; /* Einheitliches Box-Modell */
+  /*background-color: rgba(71, 71, 71, 0.9); Primärfarbe */
 }
 
 * {
@@ -34,8 +35,8 @@ body::-webkit-scrollbar-thumb:hover {
 
 @font-face {
   font-family: 'BrutalType';
-  src: url('/assets/fonts/BrutalType-Regular.woff2') format('woff2'),
-       url('/assets/fonts/BrutalType-Regular.woff') format('woff');
+  src: url('/assets/fonts/BrutalType.woff2') format('woff2'),
+       url('/assets/fonts/BrutalType.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -217,27 +218,6 @@ button[mat-icon-button] {
   margin-bottom: 0px;
   color: rgba(0, 113, 185, 0.9);
 }
-/* Allgemeines Styling */
-.services-container {
-  width: 100%;
-  max-width: 1250px;
-  margin: 20px auto; /* Zentriert den Container */
-  background-color: white;
-  padding: 20px 25px; /* Innenabstand */
-  text-align: center; /* Zentrierter Text */
-  font-family: 'BrutalType', sans-serif;
-  overflow: hidden; /* Verhindert Überlauf */
-}
-
-/* Überschrift */
-.services-title {
-  text-align: center;
-  margin: 0 auto;
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: rgba(0, 113, 185, 0.9);
-  padding: 10px 0;
-}
 
 .data-title{
   text-align: center;
@@ -257,6 +237,27 @@ button[mat-icon-button] {
   border-radius: 5px;
 }
 
+/* Service Styling */
+.services-container {
+  width: 100%;
+  max-width: 1250px;
+  margin: 20px auto; /* Zentriert den Container */
+  background-color: white;
+  padding: 20px 25px; /* Innenabstand */
+  text-align: center; /* Zentrierter Text */
+  overflow: hidden; /* Verhindert Überlauf */
+}
+
+/* Überschrift */
+.services-title {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: rgba(0, 113, 185, 0.9);
+  padding: 10px 0;
+}
+
 /* Grid für die Service-Container */
 .services-grid {
   display: grid;
@@ -266,7 +267,7 @@ button[mat-icon-button] {
 
 /* Einzelne Service-Box */
 .service-box {
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden; /* Überlauf verhindern */
@@ -293,7 +294,7 @@ button[mat-icon-button] {
 
 /* Inhalt */
 .service-content {
-  padding: 10px;
+  padding: 0px;
   text-align: center;
   background-color: white;
 }
@@ -556,6 +557,7 @@ button[mat-icon-button] {
 @media (max-width: 768px) {
   .contact-container {
     padding: 15px;
+    margin-bottom: 10px;
   }
 
   .contact-container h1 {
@@ -657,7 +659,7 @@ button[mat-icon-button] {
     margin: 0; /* Zentrierung entfernen */
     padding: 0 10px; /* Optional: Innenabstand für Ränder */
     background-color: #ffffff;
-    padding-top: 60px;
+    padding-top: 50px;
   }
   .services-grid {
     grid-template-columns: 1fr; /* Nur eine Spalte */
