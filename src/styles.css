@@ -188,11 +188,11 @@ button[mat-icon-button] {
 }
 
 .arrow-up {
-  transform: rotate(135deg); /* Zeigt nach oben */
+  transform: rotate(-45deg); /* Zeigt nach oben */
 }
 
 .arrow-down {
-  transform: rotate(-45deg); /* Zeigt nach unten */
+  transform: rotate(135deg); /* Zeigt nach unten */
 }
 
 /* Bild-Design */
@@ -267,7 +267,11 @@ button[mat-icon-button] {
 
 /* Einzelne Service-Box */
 .service-box {
+  display: flex;
+  flex-direction: column;
   background-color: #ffffff;
+  justify-content: space-between;
+  height: auto;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden; /* Überlauf verhindern */
@@ -294,7 +298,7 @@ button[mat-icon-button] {
 
 /* Inhalt */
 .service-content {
-  padding: 0px;
+  padding: 20px 10px;
   text-align: center;
   background-color: white;
 }
@@ -667,7 +671,7 @@ button[mat-icon-button] {
   }
   .service-box {
     width: 100%; /* Reduziert die Breite der Container */
-  }
+      }
   .services-container {
     background-color: rgb(255, 255, 255);
     width: 100%;
