@@ -15,6 +15,10 @@ body {
   padding-right: 16px; /* Platz für die Scrollbar */
 }
 
+#services, #contact, #about, #references, #datenschutz, #impressum {
+  scroll-margin-top: 110px; /* Gleicher Abstand für alle Sektionen */
+}
+
 .services-container, .about-container, .contact-container {
   margin-left: auto;
   margin-right: auto;
@@ -276,6 +280,7 @@ button[mat-icon-button] {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden; /* Überlauf verhindern */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 350px;
 }
 
 .service-box:hover {
@@ -559,13 +564,18 @@ button[mat-icon-button] {
 
 /* Responsive Footer */
 @media (max-width: 768px) {
+  .swiper.mySwiper {
+    padding: 0px 50px 0px 50px;
+  }
   .contact-container {
     padding: 15px;
     margin-bottom: 10px;
+    margin-top: 0;
   }
 
   .contact-container h1 {
     font-size: 24px;
+    margin-top: 0;
   }
 
   .navigation-button {
@@ -574,8 +584,9 @@ button[mat-icon-button] {
   }
   .about-container {
     width: 100%;
+    margin-top: 0px;
     margin-bottom: 10px; /* Zentrierung entfernen */
-    padding: 0 10px; /* Optional: Innenabstand für Ränder */
+    padding: 0 0px; /* Optional: Innenabstand für Ränder */
   }
 
   .about-content h2 {
@@ -660,10 +671,11 @@ button[mat-icon-button] {
   #home,
   section {
     width: 100%;
-    margin: 0; /* Zentrierung entfernen */
+     /* Zentrierung entfernen */
     padding: 0 10px; /* Optional: Innenabstand für Ränder */
     background-color: #ffffff;
-    padding-top: 50px;
+    padding-top: 10px;
+    scroll-margin-top: 100px; 
   }
   .services-grid {
     grid-template-columns: 1fr; /* Nur eine Spalte */
@@ -676,9 +688,12 @@ button[mat-icon-button] {
     background-color: rgb(255, 255, 255);
     width: 100%;
     margin: 0; /* Zentrierung entfernen */
-    padding: 0 10px; /* Optional: Innenabstand für Ränder */
+    padding: 10px 10px; /* Optional: Innenabstand für Ränder */
   }
   .services-container, .content, .about-container, .contact-container {
     padding-right: 10px; /* Reduzierter Abstand für mobile Geräte */
+  }
+  #services, #contact, #about, #references, #datenschutz, #impressum {
+    scroll-margin-top: 110px; /* Gleicher Abstand für alle Sektionen */
   }
 }
