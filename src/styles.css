@@ -454,7 +454,6 @@ button[mat-icon-button] {
   background-color: rgba(0, 113, 185, 1);
 }
 
-/* Content padding to avoid overlapping with navbar */
 .content {
   overflow-y: auto;
   height: auto; /* Höhe des Inhalts anpassen */
@@ -469,12 +468,10 @@ button[mat-icon-button] {
 }
 /* Swiper */
 .swiper.mySwiper {
-  /* Deine Stile hier */
-  /* background-color: lightblue; */
   width: 100%;
-    max-width: 1250px; /* maximale Breite für den gesamten Swiper-Container */
-    margin: 0px auto;
-    padding: 50px 50px 40px 50px;
+  max-width: 1250px; /* maximale Breite für den gesamten Swiper-Container */
+  margin: 0px auto;
+  padding: 50px 50px 40px 50px;
 }
 .references-title {
   text-align: center;
@@ -562,9 +559,23 @@ button[mat-icon-button] {
     height: 24px;
   }
 
+  ::ng-deep .custom-menu-panel .mat-menu-panel {
+  width: 70vw; /* 70% der Breite des Viewports */
+  max-width: 100vw; /* Begrenzung für größere Bildschirme */
+  height: 100%; /* Optional: Menü über die volle Höhe */
+}
+
+::ng-deep .custom-menu-panel {
+  background-color: white; /* Optional: Anpassung der Hintergrundfarbe */
+}
+
+::ng-deep .custom-menu-panel .mat-menu-content {
+  overflow-y: auto; /* Falls das Menü zu lang wird */
+}
+
 /* Responsive Footer */
 @media (max-width: 768px) {
-  .swiper.mySwiper {
+    .swiper.mySwiper {
     padding: 0px 50px 0px 50px;
   }
   .contact-container {
@@ -607,11 +618,9 @@ button[mat-icon-button] {
     padding: 10px 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Schatten für Dropdown-Menü */
   }
-
   .nav-links.open {
     display: flex; /* Navigation sichtbar, wenn geöffnet */
-  }
-
+      }
   .menu-toggle {
     display: block; /* Hamburger-Menü im mobilen Layout anzeigen */
   }

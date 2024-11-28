@@ -23,7 +23,7 @@
     <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>menu</mat-icon>
     </button>
-    <mat-menu #menu="matMenu">
+    <mat-menu #menu="matMenu" class="custom-menu-panel">
       <button mat-menu-item (click)="scrollTo('services')">Leistungen</button>
       <button mat-menu-item (click)="scrollTo('about')">Über mich</button>
       <button mat-menu-item (click)="scrollTo('contact')">Kontakt</button>
@@ -42,6 +42,11 @@
     <app-services></app-services>
   </section>
 
+  <!-- References Section -->
+  <section id="references">
+    <app-references></app-references>
+  </section>
+
   <!-- Contact Section -->
   <section id="contact">
     <app-contact></app-contact>
@@ -50,11 +55,6 @@
   <!-- About Section -->
   <section id="about">
     <app-about></app-about>
-  </section>
-
-  <!-- References Section -->
-  <section id="references">
-    <app-references></app-references>
   </section>
 
   <!-- Privacy Policy Section -->
