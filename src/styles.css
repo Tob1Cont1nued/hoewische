@@ -252,7 +252,7 @@ button[mat-icon-button] {
   overflow: hidden; /* Verhindert Überlauf */
 }
 
-/* Überschrift */
+/* Service Boxen */
 .services-title {
   text-align: center;
   margin: 0 auto;
@@ -262,24 +262,22 @@ button[mat-icon-button] {
   padding: 10px 0;
 }
 
-/* Grid für die Service-Container */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Drei Spalten */
-  gap: 20px; /* Abstand zwischen den Containern */
+  gap: 20px;
 }
 
-/* Einzelne Service-Box */
 .service-box {
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
   justify-content: space-between;
-  height: auto;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* Überlauf verhindern */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, grid-column 0.3s ease;
+  cursor: pointer;
   min-height: 350px;
 }
 
@@ -288,36 +286,45 @@ button[mat-icon-button] {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Bildbereich */
+/* Wenn eine Box expandiert ist */
+.service-box.expanded {
+  grid-column: span 3; /* Nimmt die gesamte Breite ein */
+  min-height: 600px; /* Höhe der expandierten Box */
+}
+
 .service-image {
-  height: 80%; /* Nimmt 80% der Box ein */
+  height: auto; /* Höhe des Bildbereichs */
   overflow: hidden;
 }
 
 .service-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* Bild anpassen, ohne Verzerrung */
+  height: auto;
+  object-fit: cover;
   display: block;
 }
 
-/* Inhalt */
 .service-content {
-  padding: 20px 10px;
-  text-align: center;
+  padding: 20px; /* Mehr Platz für Inhalt */
+  text-align: left; /* Text linksbündig */
   background-color: white;
 }
 
 .service-content h2 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: rgba(0, 113, 185, 0.9);
-  margin: 10px 0;
+  margin: 10px 0 10px; /* Abstand nach unten */
+  text-align: center; /* Überschrift zentriert */
 }
 
 .service-content p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #555;
+  margin-top: 10px;
+  text-align: left; /* Text linksbündig */
+  line-height: 1.6; /* Verbesserte Lesbarkeit */
 }
+
 
 /*Styling Kontakt*/
 /* Container für die gesamte Kontakt-Sektion */

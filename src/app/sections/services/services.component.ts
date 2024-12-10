@@ -3,39 +3,45 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-services',
   templateUrl: './services.component.html',
-  styleUrl: './services.component.css'
+  styleUrls: ['./services.component.css']
 })
 export class ServicesComponent {
   services = [
     { 
-      title: 'Kategorie 1', 
-      description: 'Kurzbeschreibung für Kategorie 1.', 
+      title: 'Haupt- und Abgasuntersuchung', 
+      description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.', 
       image: '/assets/images/kategorie1.png' 
     },
     { 
-      title: 'Kategorie 2', 
-      description: 'Kurzbeschreibung für Kategorie 2.', 
+      title: 'Änderungsabnahmen', 
+      description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.', 
       image: '/assets/images/kategorie2.png' 
     },
     { 
-      title: 'Kategorie 3', 
-      description: 'Kurzbeschreibung für Kategorie 3.', 
+      title: 'Einzelgutachten und Vollgutachten', 
+      description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam', 
       image: '/assets/images/kategorie3.png' 
     },
     { 
-      title: 'Kategorie 4', 
-      description: 'Kurzbeschreibung für Kategorie 4.', 
+      title: 'DMSB Wagenpassabnahme und KFP', 
+      description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam', 
       image: '/assets/images/kategorie4.png' 
     },
     { 
-      title: 'Kategorie 5', 
+      title: 'Abfahrkontrolle Schwertransporte', 
       description: 'Kurzbeschreibung für Kategorie 5.', 
       image: '/assets/images/kategorie5.png' 
     },
     { 
-      title: 'Kategorie 6', 
+      title: 'Weitere...', 
       description: 'Kurzbeschreibung für Kategorie 6.', 
       image: '/assets/images/kategorie6.png' 
     }
   ];
+
+  selectedServiceIndex: number | null = null;
+
+  toggleService(index: number): void {
+    this.selectedServiceIndex = this.selectedServiceIndex === index ? null : index;
+  }
 }

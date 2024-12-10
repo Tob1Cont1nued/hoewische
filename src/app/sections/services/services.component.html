@@ -1,16 +1,20 @@
 <div class="services-container">
-    <h1 class="services-title">Unsere Leistungen</h1>
-    <div class="underline"></div>
-    <div class="services-grid">
-      <div class="service-box" *ngFor="let service of services">
-        <div class="service-image">
-          <img [src]="service.image" alt="{{ service.title }}" />
-        </div>
-        <div class="service-content">
-          <h2>{{ service.title }}</h2>
-          <p>{{ service.description }}</p>
-        </div>
+  <h1 class="services-title">Unsere Leistungen</h1>
+  <div class="underline"></div>
+  <div class="services-grid">
+    <div 
+      class="service-box" 
+      [class.expanded]="selectedServiceIndex === i" 
+      *ngFor="let service of services; let i = index" 
+      (click)="toggleService(i)"
+    >
+      <div class="service-image">
+        <img [src]="service.image" alt="{{ service.title }}" />
+      </div>
+      <div class="service-content">
+        <h2>{{ service.title }}</h2>
+        <p *ngIf="selectedServiceIndex === i">{{ service.description }}</p>
       </div>
     </div>
   </div>
-  
+</div>
