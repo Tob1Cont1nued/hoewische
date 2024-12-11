@@ -340,7 +340,7 @@ button[mat-icon-button] {
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Leichter Schatten */
-  z-index: 1000; /* Immer im Vordergrund */
+  
   text-align: center;
   font-size: 0.8rem; /* Schriftgröße */
   font-weight: bold;
