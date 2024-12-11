@@ -325,6 +325,46 @@ button[mat-icon-button] {
   line-height: 1.6; /* Verbesserte Lesbarkeit */
 }
 
+/* Sticker-Styling */
+.tuv-sticker {
+  position: fixed; /* Bleibt sichtbar, auch beim Scrollen */
+  top: 60px; /* Abstand von oben */
+  left: 60px; /* Abstand von links */
+  width: 120px; /* Durchmesser des Kreises */
+  height: 120px;
+  background-color: rgba(0, 114, 185, 0); /* TÜV-ähnliches Blau */
+  color:  rgba(0, 113, 185, 0.9);
+  border-radius: 50%; /* Kreisform */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Leichter Schatten */
+  z-index: 1000; /* Immer im Vordergrund */
+  text-align: center;
+  font-size: 0.8rem; /* Schriftgröße */
+  font-weight: bold;
+  cursor: pointer; /* Zeigt an, dass es klickbar ist */
+  transition: transform 0.3s ease; /* Animation bei Hover */
+}
+
+.tuv-sticker:hover {
+  transform: scale(1.1); /* Leichtes Vergrößern bei Hover */
+}
+
+/* Logo im Sticker */
+.sticker-logo {
+  width: 100%; /* Passt die Logo-Größe an */
+  height: auto;
+  margin-bottom: 5px; /* Abstand zwischen Logo und Text */
+}
+
+/* Text im Sticker */
+.tuv-sticker p {
+  margin: 0;
+  line-height: 1.2;
+}
+
 
 /*Styling Kontakt*/
 /* Container für die gesamte Kontakt-Sektion */
@@ -582,6 +622,77 @@ button[mat-icon-button] {
 
 /* Responsive Footer */
 @media (max-width: 768px) {
+
+  .tuv-sticker {
+    position: relative; /* Im normalen Fluss */
+    margin: 0 auto 20px auto; /* Zentrierung mit Abstand nach unten */
+    top: 0; 
+    left: 0; 
+    width: 100%; /* Volle Breite */
+    max-width: 350px; /* Optionale maximale Breite */
+    height: auto; /* Automatische Höhe basierend auf dem Inhalt */
+    padding: 10px; /* Innenabstand für mehr Platz */
+    border-radius: 10px; /* Abgerundete Ecken */
+    background-color: rgba(255, 255, 255, 0.9); /* Blau bleibt gleich */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0); /* Leichter Schatten */
+    display: flex;
+    flex-direction: row; /* Inhalte horizontal anordnen */
+    align-items: center; /* Zentriere Inhalte vertikal */
+    gap: 10px; /* Abstand zwischen Logo und Text */
+  }
+
+  .tuv-sticker img.sticker-logo {
+    width: 80px; /* Logo auf eine kleinere Größe setzen */
+    height: auto; /* Quadratische Darstellung des Logos */
+    flex-shrink: 0; /* Verhindert, dass das Logo kleiner wird */
+  }
+
+  .tuv-sticker p {
+    font-size: 0.9rem; /* Textgröße für Mobile anpassen */
+    margin: 0; /* Kein zusätzlicher Abstand */
+    color: rgba(0, 114, 185, 0.9);
+    flex-grow: 1; /* Text kann sich ausdehnen */
+  }
+
+  .services-title {
+    margin-top: 20px; /* Abstand nach oben, um Platz zum Sticker zu schaffen */
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr; /* Eine Spalte */
+    gap: 15px; /* Geringerer Abstand zwischen den Boxen */
+  }
+
+  .service-box {
+    min-height: auto; /* Automatische Höhe für bessere Anpassung */
+  }
+
+  .service-image {
+    height: 200px; /* Feste Höhe für die Bilder, um einheitlich zu bleiben */
+  }
+
+  .service-content h2 {
+    font-size: 1rem; /* Kleinere Schriftgröße für Überschriften */
+  }
+
+  .service-content p {
+    font-size: 0.8rem; /* Kleinere Schriftgröße für Beschreibung */
+  }
+
+  .service-box.expanded {
+    grid-column: 1 / -1; /* Box nimmt die gesamte Breite ein */
+    min-height: 400px; /* Angemessene Höhe für mobiles Layout */
+  }
+
+  .service-image {
+    height: 150px; /* Kleinere Bildhöhe bei erweiterten Boxen */
+  }
+
+  .service-content {
+    padding: 15px;
+    text-align: left; /* Text wird linksbündig */
+  }
+
     .swiper.mySwiper {
     padding: 0px 50px 0px 50px;
   }

@@ -18,7 +18,7 @@
   <div>
   <button mat-raised-button  class="appointment-button" (click)="bookAppointment()" *ngIf="currentWidth > 768; else mobileMenu">Jetzt Termin vereinbaren!</button>
   </div>
-
+  
 <!-- Mobile Navigation -->
   <ng-template #mobileMenu>
     <button mat-icon-button [matMenuTriggerFor]="menu">
