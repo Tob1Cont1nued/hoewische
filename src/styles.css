@@ -655,7 +655,9 @@ button[mat-icon-button] {
   }
 
   .services-title {
-    margin-top: 20px; /* Abstand nach oben, um Platz zum Sticker zu schaffen */
+    font-size: 1.5rem; /* Kleinere Schriftgröße für mobile Geräte */
+    text-align: center; /* Optional: Zentriert */
+    margin-top: 20px; /* Weniger Abstand */
   }
 
   .services-grid {
@@ -693,8 +695,8 @@ button[mat-icon-button] {
     text-align: left; /* Text wird linksbündig */
   }
 
-    .swiper.mySwiper {
-    padding: 0px 50px 0px 50px;
+  .swiper.mySwiper {
+  padding: 0px 50px 0px 50px;
   }
   .contact-container {
     padding: 15px;
