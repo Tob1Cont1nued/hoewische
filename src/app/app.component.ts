@@ -68,4 +68,8 @@ export class AppComponent implements OnInit {
     // Z.B. Weiterleitung zu einer Terminseite
     window.open('https://terminbuchung.deinservice.de', '_blank');
   }
+
+  openAppointmentForm(): void {
+    window.open('https://forms.gle/dein-form-link', '_blank');
+  }
 }

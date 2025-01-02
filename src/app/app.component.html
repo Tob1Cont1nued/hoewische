@@ -16,7 +16,7 @@
     </div>
   </ng-container>
   <div>
-  <button mat-raised-button  class="appointment-button" (click)="bookAppointment()" *ngIf="currentWidth > 768; else mobileMenu">Jetzt Termin vereinbaren!</button>
+  <button mat-raised-button  class="appointment-button" (click)="openAppointmentForm()" *ngIf="currentWidth > 768; else mobileMenu">Jetzt Termin vereinbaren!</button>
   </div>
   
 <!-- Mobile Navigation -->
@@ -31,7 +31,7 @@
       <button mat-menu-item (click)="scrollTo('references')">Referenzen</button>
       <button mat-menu-item (click)="scrollTo('datenschutz')">Datenschutzerklärung</button>
       <button mat-menu-item (click)="scrollTo('impressum')">Impressum</button>
-      <button mat-menu-item color="primary" (click)="bookAppointment()">Jetzt Termin vereinbaren!</button>
+      <button mat-menu-item color="primary" (click)="openAppointmentForm()">Jetzt Termin vereinbaren!</button>
     </mat-menu>
   </ng-template>
 </mat-toolbar>
@@ -78,17 +78,17 @@
       <p><strong>TÜV Rheinland FSP</strong></p>
       <p>Antwerpener Str. 8<br>48163 Münster</p>
       <p>
-        Telefon: <a href="tel:01722370228">0172 2370228</a><br>
-        E-Mail: <a href="mailto:[noch nicht vorhanden]">[noch nicht vorhanden]</a>
+        Telefon: 0172 2370228<br>
+        E-Mail: <a href="mailto:christoph.hoewische&#64;tuv.com">christoph.hoewische&#64;tuv.com</a>
       </p>
     </div>
 
     <!-- Bank Info -->
     <div class="footer-section bank-info">
       <h3>Bankverbindung</h3>
-      <p><strong>Bankname:</strong> Musterbank</p>
-      <p><strong>IBAN:</strong> DE00 1234 5678 9101 1121 00</p>
-      <p><strong>BIC:</strong> ABCDDEFFXXX</p>
+      <p><strong>Bankname: </strong>Volksbank Senden eG</p>
+      <p><strong>IBAN: </strong>DE44 4006 9546 0051 4600 00</p>
+      <p><strong>BIC: </strong>GENODEM1SDN</p>
     </div>
 
     <!-- Legal Info -->
@@ -104,9 +104,13 @@
     <div class="footer-section social-media">
       <h3>Folge uns</h3>
       <div class="social-icons">
-        <a href="#" aria-label="Whatsapp"><i class="fab fa-whatsapp"></i></a>
-        <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <!-- <a href="#" aria-label="Whatsapp"><i class="fab fa-whatsapp"></i></a> -->
+        <a href="https://de.linkedin.com/in/christoph-h%C3%B6wische-1a9323318" target="_blank" aria-label="linkedin">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.instagram.com/tueffie.ms" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>        
       </div>
     </div>
   </div>
