@@ -17,7 +17,11 @@
       </div>
       <div class="service-content">
         <h2>{{ service.title }}</h2>
-        <p *ngIf="selectedServiceIndex === i">{{ service.description }}</p>
+        <div 
+          class="service-description" 
+          *ngIf="selectedServiceIndex === i"
+          [innerHTML]="service.description"
+        ></div>
       </div>
     </div>
   </div>
