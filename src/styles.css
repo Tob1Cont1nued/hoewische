@@ -346,7 +346,7 @@ button[mat-icon-button] {
   font-weight: bold;
   cursor: pointer; /* Zeigt an, dass es klickbar ist */
   transition: transform 0.3s ease; /* Animation bei Hover */
-  z-index: 2000 !important;
+  z-index: 1000;
 }
 
 .tuv-sticker:hover {
@@ -358,12 +358,14 @@ button[mat-icon-button] {
   width: 100%; /* Passt die Logo-Größe an */
   height: auto;
   margin-bottom: 5px; /* Abstand zwischen Logo und Text */
+  
 }
 
 /* Text im Sticker */
 .tuv-sticker p {
   margin: 0;
   line-height: 1.2;
+  
 }
 
 
