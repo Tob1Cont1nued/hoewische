@@ -647,6 +647,15 @@ button[mat-icon-button] {
 /* Responsive Footer */
 @media (max-width: 768px) {
 
+  .about-title {
+    text-align: center; /* Zentriert den Text horizontal */
+    margin: 0 auto; /* Zentriert den gesamten Block */
+    font-size: 2.5rem; /* Schriftgröße */
+    font-weight: bold; /* Fett */
+    color: rgba(0, 113, 185, 0.9); /* Primärfarbe */
+    padding:17px 0px 0px 15px; /* Vertikaler Innenabstand */
+  }
+
   .tuv-sticker {
     position: relative; /* Im normalen Fluss */
     margin: 0 auto 20px auto; /* Zentrierung mit Abstand nach unten */
