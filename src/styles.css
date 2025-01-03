@@ -773,6 +773,7 @@ button[mat-icon-button] {
   }
   .nav-links.open {
     display: flex; /* Navigation sichtbar, wenn geöffnet */
+    z-index: 1500 !important;
       }
   .menu-toggle {
     display: block; /* Hamburger-Menü im mobilen Layout anzeigen */
@@ -807,6 +808,7 @@ button[mat-icon-button] {
     padding: 10px; /* Reduzierte Höhe */
     justify-content: space-between; /* Platz zwischen Logo und Burger-Menü */
     height: auto;
+    z-index: 1500 !important;
   }
 
   button[mat-icon-button] {
