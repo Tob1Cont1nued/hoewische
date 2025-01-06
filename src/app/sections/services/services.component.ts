@@ -13,12 +13,6 @@ export class ServicesComponent {
       <p>Als zertifizierter KFZ-Sachverständiger biete ich Haupt- und Abgasuntersuchungen gemäß §29 StVZO für alle Fahrzeugtypen an.
       Ich prüfe Ihr Fahrzeug nach den strengen gesetzlichen Vorgaben, um die Betriebssicherheit und Umweltverträglichkeit zu gewährleisten.
       Mit meinem Service sorgen Sie dafür, dass Ihr Fahrzeug den TÜV-Anforderungen entspricht und sicher auf den Straßen unterwegs ist.</p>
-      <ul>
-        <li>Hauptuntersuchung</li>
-        <li>Abgasuntersuchung</li>
-        <li>TÜV</li>
-        <li>KFZ-Gutachten</li>
-      </ul>
     `, 
       image: '/assets/images/kategorie1.png' 
     },
