@@ -64,12 +64,10 @@ export class AppComponent implements OnInit {
   }
 
   bookAppointment(): void {
-    // Logik für Terminvereinbarung
-    // Z.B. Weiterleitung zu einer Terminseite
-    window.open('https://terminbuchung.deinservice.de', '_blank');
+    window.open('https://docs.google.com/forms/d/1Jerd2YHUmmXGED1rc67Cc2kiErptUv5exB4GOCBRG4I/edit', '_blank');
   }
 
   openAppointmentForm(): void {
-    window.open('https://forms.gle/dein-form-link', '_blank');
+    window.open('https://calendar.app.google/fRAK7LQRUsxMdRB88', '_blank');
   }
 }

@@ -150,6 +150,24 @@ button[mat-icon-button] {
   color: rgba(0, 113, 185) !important;
 }
 
+.form-button {
+  position: relative;
+  font-size: 14px; /* Schriftgröße */
+  font-weight: bold; /* Fettdruck */
+  color: rgba(0, 113, 185) !important;
+  background-color: rgba(222, 222, 58, 0.767) !important; /* Primäre Farbe */
+  border-radius: 5px; /* Runde Ecken */
+  padding: 8px 15px; /* Innenabstand */
+  margin-bottom: 30px;
+  cursor: pointer; /* Zeiger ändern */
+  transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: rgb(222, 222, 58)!important;
+  color: rgba(0, 113, 185) !important;
+}
+
 /* Container- und Header-Layout */
 .about-container {
   width: 100%;
@@ -788,7 +806,6 @@ button[mat-icon-button] {
     background-color: rgb(222, 222, 58); /* Button-Farbe */
     color: rgb(36, 34, 34); /* Text-/Symbolfarbe */
     border: none; /* Keine Umrandung */
-    border-radius: 50%; /* Runde Form */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Schlagschatten */
     display: flex; /* Flexbox aktivieren */
     justify-content: center; /* Zentriert Symbol horizontal */
@@ -797,7 +814,7 @@ button[mat-icon-button] {
     z-index: 1000; /* Über anderen Elementen */
   }
 
-  .appointment-button:hover {
+    .appointment-button:hover {
     background-color: rgba(222, 200, 58, 0.9); /* Helle Hover-Farbe */
     color: rgba(0, 113, 185); /* Hover-Farbe für Text */
     transform: scale(1.1); /* Button wird beim Hover etwas größer */
