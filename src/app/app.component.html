@@ -8,9 +8,9 @@
   <ng-container *ngIf="currentWidth > 768; else mobileMenu">
     <div class="nav-links">
       <button mat-button (click)="scrollTo('services')">Leistungen</button>
-      <button mat-button (click)="scrollTo('about')">Über mich</button>
-      <button mat-button (click)="scrollTo('contact')">Kontakt</button>
       <button mat-button (click)="scrollTo('references')">Referenzen</button>
+      <button mat-button (click)="scrollTo('contact')">Kontakt</button>
+      <button mat-button (click)="scrollTo('about')">Über mich</button>
       <button mat-button (click)="scrollTo('datenschutz')">Datenschutzerklärung</button>
       <button mat-button (click)="scrollTo('impressum')">Impressum</button>
     </div>
@@ -25,13 +25,13 @@
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu" class="custom-menu-panel">
+      <button mat-menu-item (click)="openAppointmentForm()">Jetzt Termin vereinbaren!</button>
       <button mat-menu-item (click)="scrollTo('services')">Leistungen</button>
-      <button mat-menu-item (click)="scrollTo('about')">Über mich</button>
-      <button mat-menu-item (click)="scrollTo('contact')">Kontakt</button>
       <button mat-menu-item (click)="scrollTo('references')">Referenzen</button>
+      <button mat-menu-item (click)="scrollTo('contact')">Kontakt</button>
+      <button mat-menu-item (click)="scrollTo('about')">Über mich</button>
       <button mat-menu-item (click)="scrollTo('datenschutz')">Datenschutzerklärung</button>
       <button mat-menu-item (click)="scrollTo('impressum')">Impressum</button>
-      <button mat-menu-item color="primary" (click)="openAppointmentForm()">Jetzt Termin vereinbaren!</button>
     </mat-menu>
   </ng-template>
 </mat-toolbar>
